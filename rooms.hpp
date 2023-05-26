@@ -159,7 +159,7 @@ void square_8_data() {
     square_8.movingDirection = 
     "[north: Square]\n"
     "[south: Square]\n"
-    "[west: Horse Farm]\n";
+    "[west: Horse Farm]\n"
     "[east: Tavern]\n";
     square_8.northRoomId = 11;
     square_8.southRoomId = 5;
@@ -212,7 +212,7 @@ void square_11_data() {
     square_11.movingDirection = 
     "[north: Square]\n"
     "[south: Square]\n"
-    "[west: Butchery]\n";
+    "[west: Butchery]\n"
     "[east: Blacksmith]\n";
     square_11.northRoomId = 14;
     square_11.southRoomId = 8;
@@ -264,7 +264,7 @@ void square_14_data() {
     square_14.movingDirection = 
     "[north: Trading Post]\n"
     "[south: Square]\n"
-    "[west: Clothing Shop]\n";
+    "[west: Clothing Shop]\n"
     "[east: Market]\n";
     square_14.northRoomId = 17;
     square_14.southRoomId = 11;
@@ -316,7 +316,7 @@ void tradingPost_17_data() {
     tradingPost_17.movingDirection = 
     "[north: Square]\n"
     "[south: Square]\n"
-    "[west: Church]\n";
+    "[west: Church]\n"
     "[east: Hospital]\n";
     tradingPost_17.northRoomId = 20;
     tradingPost_17.southRoomId = 14;
@@ -349,10 +349,8 @@ void jasperHouse_19_data() {
     jasperHouse_19.roomDescription =
     "The Jasper's house is the noble Jasper's house.\n";
     jasperHouse_19.movingDirection = 
-    "[north: Trading Post]\n"
-    "[south: Square]\n"
-    "[west: Clothing Shop]\n";
-    "[east: Market]\n";
+    "[south: Church]\n"
+    "[east: Square]\n";
     jasperHouse_19.northRoomId = 0;
     jasperHouse_19.southRoomId = 16;
     jasperHouse_19.westRoomId = 0;
@@ -366,6 +364,10 @@ void square_20_data() {
     square_20.roomTitle = "Square";
     square_20.roomDescription =
     "The Square is the center of trade, commerce, and culture of the area.\n";
+    square_20.movingDirection = 
+    "[south: Trading Post]\n"
+    "[west: Jasper's House]\n"
+    "[east: Agnes' House]\n";
     square_20.northRoomId = 22;
     square_20.southRoomId = 17;
     square_20.westRoomId = 19;
@@ -376,9 +378,12 @@ Room agnesHouse_21;
 
 void agnesHouse_21_data() {
     agnesHouse_21.roomId = 21;
-    agnesHouse_21.roomTitle = "Agnes' house";
+    agnesHouse_21.roomTitle = "Agnes' House";
     agnesHouse_21.roomDescription =
-    "The Agnes' house is the noble Agnes' house.\n";
+    "The Agnes' House is the noble Agnes' House.\n";
+    agnesHouse_21.movingDirection = 
+    "[south: Hospital]\n"
+    "[west: Square]\n"; 
     agnesHouse_21.northRoomId = 0;
     agnesHouse_21.southRoomId = 18;
     agnesHouse_21.westRoomId = 20;
@@ -392,6 +397,8 @@ void kingsPalace_22_data() {
     kingsPalace_22.roomTitle = "King's Palace";
     kingsPalace_22.roomDescription =
     "The King's Palace is the King's Palace.\n";
+    kingsPalace_22.movingDirection = 
+    "[south: Square]\n";
     kingsPalace_22.northRoomId = 0;
     kingsPalace_22.southRoomId = 20;
     kingsPalace_22.westRoomId = 0;
@@ -399,34 +406,30 @@ void kingsPalace_22_data() {
 }
 
 
-
-
-
-
 void fill_rooms_data() {
 
-house_1_data();
-
-
-
-
-knightSchool_6_data();
-horseFarm_7_data();
-square_8_data();
-tavern_9_data();
-butchery_10_data();
-square_11_data();
-blacksmith_12_data();
-clothingShop_13_data();
-square_14_data();
-market_15_data();
-church_16_data();
-tradingPost_17_data();
-hospital_18_data();
-jasperHouse_19_data();
-square_20_data();
-agnesHouse_21_data();
-kingsPalace_22_data();
+    house_1_data();
+    cropField_2_data();
+    cropField_3_data();
+    prison_4_data();
+    square_5_data();
+    knightSchool_6_data();
+    horseFarm_7_data();
+    square_8_data();
+    tavern_9_data();
+    butchery_10_data();
+    square_11_data();
+    blacksmith_12_data();
+    clothingShop_13_data();
+    square_14_data();
+    market_15_data();
+    church_16_data();
+    tradingPost_17_data();
+    hospital_18_data();
+    jasperHouse_19_data();
+    square_20_data();
+    agnesHouse_21_data();
+    kingsPalace_22_data();
     
 }
 
