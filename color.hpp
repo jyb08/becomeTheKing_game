@@ -1,7 +1,12 @@
+#pragma once
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include <ctype.h>
+#include <iostream>
+
+using namespace std;
 
 void color_red() {
     printf("\033[1;31m");
@@ -79,7 +84,16 @@ void print_game_victory() {
     color_reset();
 }
 
-
-
-
-
+void print_game_dice() {
+    color_white();
+    cout << "               (( _______         " << endl;
+    cout << "     _______     /\\O    O\\        " << endl;
+    cout << "    /O     /\\   /  \\      \\       " << endl;
+    cout << "   /   O  /O \\ / O  \\O____O\\ ))   " << endl;
+    cout << "((/_____O/    \\     /O     /      " << endl;
+    cout << "  \\O    O\\    / \\  /   O  /       " << endl;
+    cout << "   \\O    O\\ O/   \\/_____O/        " << endl;
+    cout << "    \\O____O\\/ ))          ))      " << endl;
+    cout << "  ((                              " << endl;
+    color_reset();
+}
