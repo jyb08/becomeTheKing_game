@@ -1,7 +1,8 @@
 #pragma once
 
 #include <iostream>
-
+#include <vector>
+#include "items.hpp"
 
 using namespace std;
 
@@ -25,8 +26,16 @@ public:
 
     int eastRoomId;
 
+    vector<Character> characters;
+    
+    vector<Character> monsters;
+
+    vector<Item> items;
 };
 
+
+
+Room empty_0;
 
 Room house_1;
 
@@ -366,6 +375,7 @@ void square_20_data() {
     square_20.roomDescription =
     "The Square is the center of trade, commerce, and culture of the area.\n";
     square_20.movingDirection = 
+    "[north: King's Palace]\n"
     "[south: Trading Post]\n"
     "[west: Jasper's House]\n"
     "[east: Agnes' House]\n";
@@ -432,5 +442,55 @@ void fill_rooms_data() {
     agnesHouse_21_data();
     kingsPalace_22_data();
     
+}
+
+bool removeItemFromRoom(Room &room, string itemName) {
+    vector<Item>::iterator found = room.items.end();
+
+    for (auto it = room.items.begin(); it != room.items.end(); it++) {
+        if (containString(it->name, itemName)) {
+            found = it;
+        }
+    }
+
+    if (found != room.items.end()) {
+        room.items.erase(found);
+        return true;
+    } else {
+        cout << "The following item does not exist in this room!" << endl;
+        return false;
+    }
+    
+}
+
+bool checkItemFromRoom(Room &room, string itemName) {
+    vector<Item>::iterator found = room.items.end();
+
+    for (auto it = room.items.begin(); it != room.items.end(); it++) {
+        if (containString(it->name, itemName)) {
+            found = it;
+        }
+    }
+
+    if (found != room.items.end()) {
+        return true;
+    } else {
+        cout << "The following item does not exist in this room!" << endl;
+        return false;
+    }
+    
+}
+
+// Assuming there MUST be a item in the room.
+Item getItemFromRoom(Room &room, string itemName) {
+    vector<Item>::iterator found = room.items.end();
+
+    for (auto it = room.items.begin(); it != room.items.end(); it++) {
+        if (containString(it->name, itemName)) {
+            found = it;
+        }
+    }
+
+    return *found;
 }
 
